@@ -1,15 +1,19 @@
 import {render, screen} from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect';
 import {sum, multiply, splitInoWords} from "./01-unit";
+// data hoisting for function sum and multiply
+let a: number;
+let b: number;
+let c: number;
+
+beforeEach(() => {
+    a = 1;
+    b = 2;
+    c = 3;
+})
 
 
 test('sum should be correct', () => {
-    /// data
-    let a = 1;
-    let b = 2;
-    let c = 3;
-    let d = 4;
-
     // action
     let result1 = sum(a, b)
     let result2 = sum(a, c)
@@ -20,12 +24,6 @@ test('sum should be correct', () => {
 })
 
 test('multiply should be correct', () => {
-    // data
-    let a = 1;
-    let b = 2;
-    let c = 3;
-    let d = 4;
-
     // action
     let result1 = multiply(a, b)
     let result2 = multiply(b, c)
