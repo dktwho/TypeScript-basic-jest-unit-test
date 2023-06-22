@@ -12,7 +12,6 @@ beforeEach(() => {
     c = 3;
 })
 
-
 test('sum should be correct', () => {
     // action
     let result1 = sum(a, b)
